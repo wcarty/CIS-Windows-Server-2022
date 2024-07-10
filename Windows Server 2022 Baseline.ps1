@@ -3287,26 +3287,26 @@ $temp_pass2 = ""
 $invalid_pass = $true
 
 # Get input password if the admin account does not already exist
-$NewLocalAdminExists = Get-LocalUser -Name $NewLocalAdmin -ErrorAction SilentlyContinue
-if ($NewLocalAdminExists.Count -eq 0) {
-    do {
-        Write-Info "I will create a new Administrator account, you need to specify the new account password."
-        Write-Info "Your password must contain at least 15 characters, capital letters, numbers and symbols"
-        
-        Write-Info "Please enter the new password:"
-        $temp_pass1 = Read-Host
-        Write-Info "Please repeat the new password:"
-        $temp_pass2 = Read-Host 
-        
-        $invalid_pass = ValidatePasswords $temp_pass1 $temp_pass2 
-        if($invalid_pass -eq $false) {
-            Write-Error "Your passwords do not match or do not follow the minimum complexity requirements, try again."
-        } 
-        else {
-            $NewLocalAdminPassword = ConvertTo-SecureString $temp_pass1 -AsPlainText -Force 
-        }
-    } while($invalid_pass -eq $false)
-}
+#$NewLocalAdminExists = Get-LocalUser -Name $NewLocalAdmin -ErrorAction SilentlyContinue
+#if ($NewLocalAdminExists.Count -eq 0) {
+#    do {
+#        Write-Info "I will create a new Administrator account, you need to specify the new account password."
+#        Write-Info "Your password must contain at least 15 characters, capital letters, numbers and symbols"
+#        
+#        Write-Info "Please enter the new password:"
+#        $temp_pass1 = Read-Host
+#        Write-Info "Please repeat the new password:"
+#        $temp_pass2 = Read-Host 
+#        
+#        $invalid_pass = ValidatePasswords $temp_pass1 $temp_pass2 
+#        if($invalid_pass -eq $false) {
+#            Write-Error "Your passwords do not match or do not follow the minimum complexity requirements, try again."
+#        } 
+#        else {
+#            $NewLocalAdminPassword = ConvertTo-SecureString $temp_pass1 -AsPlainText -Force 
+#        }
+#    } while($invalid_pass -eq $false)
+#}
 
 $location = Get-Location
     
