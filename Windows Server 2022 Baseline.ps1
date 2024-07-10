@@ -64,7 +64,7 @@ $ExecutionList = @(
     "CreateASRExclusions"                                               # This deletes and readds the attack surface reduction exclusions configured in the script.
     "SetWindowsDefenderLogSize"                                         # Sets the defender log size as configured in the top of this script
     #KEEP THESE IN THE BEGINING
-    "CreateNewLocalAdminAccount",                                       #Mandatory otherwise the system access is lost
+    #"CreateNewLocalAdminAccount",                                       #Mandatory otherwise the system access is lost
     "RenameAdministratorAccount",                                       #2.3.1.5 
     "RenameGuestAccount",                                               #2.3.1.6
     ###########################
